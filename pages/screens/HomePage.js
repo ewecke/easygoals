@@ -1,26 +1,37 @@
 import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-function Home() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
-    </View>
-  );
+class HomeScreen extends React.Component {
+      render() {
+            // Mission otional . needs change 
+            return (
+                  <View style={styles.container}>
+                         <TouchableOpacity onPress={() => this.props.navigation.navigate('Mission')}>
+                              <Text style={styles.button}>Camera</Text>
+                        </TouchableOpacity>
+                        
+                  </View>
+            );
+      }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ebebeb',
-  },
-  text: {
-    color: '#101010',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
+      container: {
+            flex: 1,
+            backgroundColor: '#819dad',
+            alignItems: 'center',
+            justifyContent: 'center',
+      },
+      
+      button: {
+            backgroundColor: '#161737',
+            borderRadius: 20,
+            padding: 10,
+            color: '#fff',
+            marginBottom: 20,
+            
+            
+      }
 });
 
-export default Home;
+export default HomeScreen
