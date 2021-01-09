@@ -1,15 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-class HomePage extends React.Component {
+class ContactPage extends React.Component {
   render() {
-    // Mission otional . needs change
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('Mission')}
+          onPress={() => this.props.navigation.navigate('ToDoList')}
         >
-          <Text style={styles.button}>Camera</Text>
+          <Text style={styles.button}>Contact Page</Text>
         </TouchableOpacity>
       </View>
     );
@@ -33,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomePage;
+export default ContactPage;
