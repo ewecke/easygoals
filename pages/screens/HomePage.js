@@ -7,7 +7,7 @@ class HomePage extends React.Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('Mission')}
+          onPress={() => this.props.navigation.navigate('ImagePickerOn')}
         >
           <Text style={styles.button}>Camera</Text>
         </TouchableOpacity>
