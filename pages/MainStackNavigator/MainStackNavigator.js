@@ -8,8 +8,8 @@ import { Feather } from '@expo/vector-icons'; //pei-ling code
 import Mission from '../screens/mission';
 import UserPage from '../screens/UserPage';
 import HomePage from '../screens/HomePage';
-import ContactPage from '../screens/ContactPage'; //pei-ling code
-import AboutPage from '../screens/AboutPage'; //pei-ling code
+import SettingPage from '../screens/SettingPage'; //pei-ling code
+import HelpPage from '../screens/HelpPage'; //pei-ling code
 import SignOutPage from '../screens/SignOutPage'; //pei-ling code
 
 // Import Custom Sidebar
@@ -127,10 +127,10 @@ function homeScreenStack({ navigation }) {
   );
 }
 
-function contactScreenStack({ navigation }) {
+function settingScreenStack({ navigation }) {
   return (
     <Stack.Navigator
-      initialRouteName="ContactPage"
+      initialRouteName="SettingPage"
       screenOptions={{
         headerLeft: () => (
           <NavigationDrawerStructure navigationProps={navigation} />
@@ -145,8 +145,8 @@ function contactScreenStack({ navigation }) {
       }}
     >
       <Stack.Screen
-        name="ContactPage"
-        component={ContactPage}
+        name="SettingPage"
+        component={SettingPage}
         options={{
           title: 'Goal App', //Set Header Title
         }}
@@ -165,16 +165,16 @@ function contactScreenStack({ navigation }) {
   );
 }
 
-function aboutScreenStack({ navigation }) {
+function helpScreenStack({ navigation }) {
   return (
     <Stack.Navigator
-      initialRouteName="AboutPage"
+      initialRouteName="HelpPage"
       screenOptions={{
         headerLeft: () => (
           <NavigationDrawerStructure navigationProps={navigation} />
         ),
         headerStyle: {
-          backgroundColor: '#4b0082', //Set Header color
+          backgroundColor: '#146cef', //Set Header color
         },
         headerTintColor: '#fff', //Set Header text color
         headerTitleStyle: {
@@ -183,10 +183,10 @@ function aboutScreenStack({ navigation }) {
       }}
     >
       <Stack.Screen
-        name="AboutPage"
-        component={AboutPage}
+        name="HelpPage"
+        component={HelpPage}
         options={{
-          title: 'Goal App', //Set Header Title
+          title: 'Help Center', //Set Header Title
         }}
       />
 
@@ -246,24 +246,24 @@ function MainStackNavigator() {
 
         {/* pei-ling added, section one - biggins */}
         <Drawer.Screen
-          name="ContactPage"
+          name="SettingPage"
           options={{
-            drawerLabel: 'Contact Us',
+            drawerLabel: 'Setting',
             drawerIcon: ({ tintColor }) => (
-              <Feather name="message-square" size={16} color={tintColor} />
+              <Feather name="settings" size={16} color={tintColor} />
             ),
           }}
-          component={contactScreenStack}
+          component={settingScreenStack}
         />
         <Drawer.Screen
-          name="AboutPage"
+          name="HelpPage"
           options={{
-            drawerLabel: 'About Us',
+            drawerLabel: 'Help',
             drawerIcon: ({ tintColor }) => (
               <Feather name="users" size={16} color={tintColor} />
             ),
           }}
-          component={aboutScreenStack}
+          component={helpScreenStack}
         />
         <Drawer.Screen
           name="SignOutPage"
