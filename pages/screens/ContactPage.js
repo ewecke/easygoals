@@ -51,6 +51,28 @@ class ContactPage extends React.Component {
   }
 
   submit(){
+    if (this.state.name=="")
+    {
+      this.setState({nameError:"Sorry your name is empty"})
+    }
+    else{
+      this.setState({nameError:""})
+    }
+    
+    if (this.state.email=="") {
+      this.setState({emailError:"Sorry your e-mail is empty"})
+    }
+    else{
+      this.setState({emailError:""})
+    }
+    
+    if (this.state.message=="") {
+      this.setState({messageError:"Sorry your message is empty"})
+    }
+    else{
+      this.setState({messageError:""})
+    }
+
     console.warn(this.state)
   }
 
@@ -74,7 +96,7 @@ class ContactPage extends React.Component {
 
         <TextInput
           placeholder="Your name"
-          onBlur={()=>this.nameValidator()}
+          /* onBlur={()=>this.nameValidator()} */
           onChangeText={(text) => {this.setState({name: text})}}
           style={styles.textInput}
         />
@@ -82,7 +104,7 @@ class ContactPage extends React.Component {
 
         <TextInput
           placeholder="Your E-mail"
-          onBlur={()=>this.emailValidator()}
+          /* onBlur={()=>this.emailValidator()} */
           onChangeText={(text) => {this.setState({email: text})}}
           style={styles.textInput}
         />
@@ -90,10 +112,11 @@ class ContactPage extends React.Component {
         
         <TextInput
           placeholder="Your Messege"
-          onBlur={()=>this.messageValidator()}
+          /* onBlur={()=>this.messageValidator()} */
           onChangeText={(text) => {this.setState({message: text})}}
           style={styles.textInput}
         />
+
         <Text style={styles.txtError}>{this.state.messageError}</Text>
         
         <View style={styles.btSub}>
@@ -111,7 +134,7 @@ class ContactPage extends React.Component {
 
 const styles = StyleSheet.create({
   contactUsBanner:{
-   height:200,
+  height:200,
   },
 
   container: {
@@ -129,7 +152,7 @@ const styles = StyleSheet.create({
   textInput: {
     paddingLeft:10,
     width: width_proportion80,
-    borderRadius:4,
+    borderRadius:10,
     borderWidth:1,
     borderColor:'#666666',
   },
@@ -137,6 +160,7 @@ const styles = StyleSheet.create({
   btSub: {
     width: width_proportion80,
     marginBottom:20,
+    borderRadius:10,
   },
 
   txtError: {
