@@ -11,8 +11,11 @@ import HomePage from '../screens/HomePage';
 import ContactPage from '../screens/ContactPage'; //pei-ling code
 import AboutPage from '../screens/AboutPage'; //pei-ling code
 import SignOutPage from '../screens/SignOutPage'; //pei-ling code
+import ImagePickerOn from '../screens/ImagePickerOn' //natia code 
 
-// Import Custom Sidebar
+
+
+// Import Custom idebar
 import CustomSidebarMenu from './CustomSidebarMenu';
 
 const Stack = createStackNavigator();
@@ -49,6 +52,31 @@ function userScreenStack({ navigation }) {
         component={UserPage}
         options={{
           title: 'UserPage', //Set Header Title
+          headerLeft: () => (
+            <NavigationDrawerStructure navigationProps={navigation} />
+          ),
+          headerStyle: {
+            backgroundColor: '#4b0082', //Set Header color
+          },
+          headerTintColor: '#fff', //Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', //Set Header text style
+          },
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+///natia code 
+function ImagePickerOnScreenStack({ navigation }) {
+  return (
+    <Stack.Navigator initialRouteName="ImagePickerOn">
+      <Stack.Screen
+        name="ImagePickerOn"
+        component={ImagePickerOn }
+        options={{
+          title: 'ImagePickerOn', //Set Header Title
           headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
@@ -113,6 +141,14 @@ function homeScreenStack({ navigation }) {
           title: 'Goal App', //Set Header Title
         }}
       />
+      
+       <Stack.Screen
+        name="ImagePickerOn"
+        component={ImagePickerOn}
+        options={{
+          title: 'Goal App', //Set Header Title by natia
+        }}
+      /> 
 
       <Stack.Screen
         name="Mission"
@@ -202,7 +238,7 @@ function aboutScreenStack({ navigation }) {
     </Stack.Navigator>
   );
 }
-
+//burger screens
 function MainStackNavigator() {
   return (
     <NavigationContainer>
