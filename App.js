@@ -1,7 +1,6 @@
-import React from 'react';
-
-import MainStackNavigator from './pages/MainStackNavigator/MainStackNavigator';
+import React from 'react'
+import AppContainer from './pages/MainStackNavigator/index'
 
 export default function App() {
-  return <MainStackNavigator />;
+  return <AppContainer />
 }

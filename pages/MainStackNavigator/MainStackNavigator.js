@@ -10,8 +10,8 @@ import UserPage from '../screens/UserPage';
 import HomePage from '../screens/HomePage';
 import ContactPage from '../screens/ContactPage'; //pei-ling code
 import AboutPage from '../screens/AboutPage'; //pei-ling code
-import SignOutPage from '../screens/SignOutPage'; //pei-ling code
-import ImagePickerOn from '../screens/ImagePickerOn' //natia code  for image
+import ImagePickerOn from '../screens/ImagePickerOn' //natia code 
+
 
 
 
@@ -238,7 +238,7 @@ function aboutScreenStack({ navigation }) {
     </Stack.Navigator>
   );
 }
-//burger screens
+
 function MainStackNavigator() {
   return (
     <NavigationContainer>
