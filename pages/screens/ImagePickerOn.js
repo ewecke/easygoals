@@ -3,6 +3,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
 
+
+//image piPicker 
 export default function ImagePickerOn() {
   let [selectedImage, setSelectedImage] = React.useState(null);
 
